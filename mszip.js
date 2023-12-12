@@ -1,20 +1,17 @@
 const zlib = require('zlib');
 
-class MSZip {
+class MSZipTools {
   async decompress(compressedData) {
     try {
-      // Check if compressedData is a buffer
       if (!Buffer.isBuffer(compressedData)) {
         throw new Error('Input data must be a Buffer');
       }
 
       const magic = compressedData.slice(0, 2);
-      // Compare magic bytes using Buffer.equals
       if (!magic.equals(Buffer.from('CK'))) {
         throw new Error('Invalid MSZip format');
       }
 
-      // Assuming zlib compression is used in MSZip
       const compressedContent = compressedData.slice(2);
       const decompressedContent = await this.inflateAsync(compressedContent);
 
@@ -37,4 +34,4 @@ class MSZip {
   }
 }
 
-module.exports = MSZip;
+module.exports = MSZipTools;
