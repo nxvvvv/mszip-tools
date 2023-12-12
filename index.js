@@ -1,5 +1,5 @@
-const MSZip = require('./mszip');
+const MSZipTools = require('./msziptools');
 
 module.exports = {
-  MSZip,
+  MSZipTools,
 };
