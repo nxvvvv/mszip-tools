@@ -1,0 +1,28 @@
+{
+  "name": "mszip",
+  "version": "1.0.0",
+  "description": "MSZip tool for NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nxvvvv/mszip.git"
+  },
+  "keywords": [
+    "mszip",
+    "decompression",
+    "zip"
+  ],
+  "author": "Navaneeth K M",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/nxvvvv/mszip/issues"
+  },
+  "homepage": "https://github.com/nxvvvv/mszip#readme",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "zlib": "^1.0.5"
+  }
+}
