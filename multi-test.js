@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { MSZip } = require('./mszip');
+const { MSZipTools } = require('./msziptools');
 
 async function extractOriginalData(filePaths) {
   try {
@@ -8,9 +8,9 @@ async function extractOriginalData(filePaths) {
 
     const concatenatedData = Buffer.concat(chunks);
 
-    const MSZip = new MSZip();
+    const MSZipTools = new MSZipTools();
 
-    const decompressedData = await MSZip.decompress(concatenatedData);
+    const decompressedData = await MSZipTools.decompress(concatenatedData);
 
     fs.writeFileSync('output.txt', decompressedData);
 
@@ -20,9 +20,9 @@ async function extractOriginalData(filePaths) {
   }
 }
 
-const mszipFiles = [
+const MSZipToolsFiles = [
   'path/to/chunk1.mszip',
   'path/to/chunk2.mszip',
 
 ];
-extractOriginalData(mszipFiles);
+extractOriginalData(MSZipToolsFiles);
